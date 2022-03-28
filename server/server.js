@@ -1,13 +1,14 @@
 const express = require('express');
-const cors = require('cors');
 const apiRouter = require('./routes');
+const port = 3000;
+const app = express();
 
-
-let app = express();
-
-app.use(cors());
-app.use(express.json());
+app
 
 app.use('/api', apiRouter);
 
-app.listen(3000);
+
+
+app.listen(port, () => {
+    console.log(`example app listening on port ${port}`);
+});
